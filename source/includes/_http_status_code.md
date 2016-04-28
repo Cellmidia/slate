@@ -1,6 +1,6 @@
 # HTTP Status Code
 
-A Cellmidia API em qualer pedido pode te retorna os seguintes status HTTP:
+A Cellmidia API em qualquer solicitação os seguites HTTP Status podem ser retornados:
 
  Código | Descrição
  ------ | ---------
