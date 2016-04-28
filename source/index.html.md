@@ -9,7 +9,8 @@ toc_footers:
   - <a href='#'>Cellmidia Developers Team</a>
 
 includes:
-  - errors
+  - authorization
+  - http_status_code
 
 search: true
 ---
@@ -52,19 +53,6 @@ API Request
 API Response
 -----------
 
-    Todas as APIs da Cellmidia retornam uma resposta em formato JSON. A API pode retornar um dos seguintes códigos de status HTTP.
+    Todas as APIs da Cellmidia retornam uma resposta em formato JSON.
 
-     código | descrição
-     ------ | ---------
-     200 | Request has been executed
-     201 | Resource created
-     202 | Resource changed
-     204 | Resource deleted
-     400 | A parameter is missing or is invalid
-     401 | Authentication failed
-     404 | Resource cannot be found
-     405 | HTTP method not allowed
-     409 | Conflict
-     500 | Server error
-
-
+    Uma lista dos principais códigos de status HTTP podem ser vista na seção HTTP Status Code.
