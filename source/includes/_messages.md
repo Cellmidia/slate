@@ -177,25 +177,25 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-    "count": 5,
+    "count": 2,
     "items": [
         {
           "createAt": "2016-06-17T18:21:23+00:00",
-          "from": "Aaa",
+          "from": "Alguem",
           "id": 9,
           "message": "abcdefghigjkl",
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "schedule": null,
           "to": 554899963369,
-          "type": "MMS"
+          "type": "SMS"
         },
         {
           "createAt": "2016-06-17T18:52:31+00:00",
-          "from": "aaa",
+          "from": "Something",
           "id": 10,
-          "message": "aaaaaaaaaaaaaaaaaa",
+          "message": "This is a message",
           "lastModifiedAt": "2016-06-17T18:52:31+00:00",
-          "schedule": null,
+          "schedule": "2016-08-08T08:50:00+00:00",
           "to": 554899393369,
           "type": "MMS"
         }
@@ -214,6 +214,13 @@ Content-Type: application/json
     "code": 404
 }
 ```
+
+* Response
+
+Atributo | Descrição
+-------- | ---------
++ count | Contador
++ items  | Array de messages 
 
 
 ### Listando uma menssagem
