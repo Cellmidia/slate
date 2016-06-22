@@ -88,12 +88,12 @@ Atributo | Descrição
 + id | Representa uma ID
 + createdAt  | Representa a data de criação
 + modifieddAt  | Representa a data de modificação
-+message | Representa o texto da mensagem
-+account | Representa uma account
-+from | Representa o remetente
-+to | Representa o numero do destinatario
-+type | Representa o tipo de mensagem
-+schedule | Represente a data que será enviada a mensagem, não obrigatorio
++ message | Representa o texto da mensagem
++ account | Representa uma account
++ from | Representa o remetente
++ to | Representa o numero do destinatario
++ type | Representa o tipo de mensagem
++ schedule | Represente a data que será enviada a mensagem, não obrigatorio
 
 
  **PARÂMETROS DO PAYLOAD**
@@ -113,11 +113,11 @@ Atributo | Descrição
 + id | Novo ID
 + createdAt  | DateTime atual
 + modifieddAt  | DateTime atual
-+message | A mesma usada na solicitação
-+from | A mesma usada na solicitação
-+to | A mesma usada na solicitação
-+type | A mesma usada na solicitação
-+schedule | A mesma usada na solicitação
++ message | A mesma usada na solicitação
++ from | A mesma usada na solicitação
++ to | A mesma usada na solicitação
++ type | A mesma usada na solicitação
++ schedule | A mesma usada na solicitação
 
 ### Excluindo a menssagem
 
@@ -288,8 +288,8 @@ Atributo | Descrição
 + id | Mesmo ID usado na solicitação
 + createdAt  | Dado criado anteriormente 
 + modifieddAt  | Dado criado anteriormente
-+message | Dado criado anteriormente
-+from | Dado criado anteriormente
-+to | Dado criado anteriormente
-+type | Dado criado anteriormente
-+schedule | Dado criado anteriormente
++ message | Dado criado anteriormente
++ from | Dado criado anteriormente
++ to | Dado criado anteriormente
++ type | Dado criado anteriormente
++ schedule | Dado criado anteriormente
