@@ -89,6 +89,7 @@ Atributo | Descrição
 + createdAt  | Representa a data de criação
 + modifieddAt  | Representa a data de modificação
 +message | Representa o texto da mensagem
++account | Representa uma account
 +from | Representa o remetente
 +to | Representa o numero do destinatario
 +type | Representa o tipo de mensagem
@@ -184,6 +185,8 @@ Content-Type: application/json
           "from": "Alguem",
           "id": 9,
           "message": "abcdefghigjkl",
+          "email": "leonardo@cellmidia.com.br"
+          },
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "schedule": null,
           "to": 554899963369,
@@ -214,6 +217,12 @@ Content-Type: application/json
     "code": 404
 }
 ```
+
+**PARÂMETROS DO PAYLOAD**
+
+Argumento | Obrigatório | Observações
+--------- | ----------- | -----------
+ID_Account | Sim | O ID irá ser gerado de acordo com a Account que está logada
 
 * Response
 
@@ -269,7 +278,8 @@ Content-Type: application/json
 
 Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
-ID | Sim | Unique e int
+ID_Account | Sim | O ID irá ser gerado de acordo com a Account que está logada
+ID | Sim | ID da Message 
 
 * Response
 
