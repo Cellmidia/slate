@@ -16,11 +16,11 @@ Para se excluir uma mensagem deve-se ultilizar o seguinte endpoint:
 
     `DELETE /messages`
     
-Para se listar todas as mensagens uma mensagem deve-se ultilizar o seguinte endpoint:
+Para se listar todas as mensagens deve-se ultilizar o seguinte endpoint:
 
     `GET /messages`
  
-Para se listar todas as mensagens uma mensagem deve-se ultilizar o seguinte endpoint:
+Para se listar uma mensagem deve-se ultilizar o seguinte endpoint:
 
     `GET /messages/ID`    
 
@@ -89,7 +89,7 @@ Atributo | Descrição
 + createdAt  | Representa a data de criação
 + modifieddAt  | Representa a data de modificação
 + message | Representa o texto da mensagem
-+ account | Representa uma account
++ owner | Representa uma account
 + from | Representa o remetente
 + to | Representa o numero do destinatario
 + type | Representa o tipo de mensagem
@@ -186,7 +186,6 @@ Content-Type: application/json
           "id": 9,
           "message": "abcdefghigjkl",
           "email": "leonardo@cellmidia.com.br"
-          },
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "schedule": null,
           "to": 554899963369,
@@ -222,7 +221,7 @@ Content-Type: application/json
 
 Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
-ID_Account | Sim | O ID irá ser gerado de acordo com a Account que está logada
+ID_Owner | Sim | O ID irá ser gerado de acordo com a Account que está logada
 
 * Response
 
@@ -278,7 +277,7 @@ Content-Type: application/json
 
 Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
-ID_Account | Sim | O ID irá ser gerado de acordo com a Account que está logada
+ID_Owner | Sim | O ID irá ser gerado de acordo com a Account que está logada
 ID | Sim | ID da Message 
 
 * Response
