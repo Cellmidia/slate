@@ -10,6 +10,9 @@ language_tabs:
 includes:
     - authorization
     - http_status_code
+    - campaign
+    - contacts
+    - messages
 
 toc_footers:
   - <a href='#'>Cellmidia Developers Team</a>
