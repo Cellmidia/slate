@@ -14,15 +14,15 @@ Para se criar um contato deve-se ultilizar o seguinte endpoint:
 
 Para se editar um contato deve-se ultilizar o seguinte endpoint:
 
-    `PATCH /contact/ID`
+    `PATCH /contacts/ID`
     
 Para se listar todos os contato deve-se ultilizar o seguinte endpoint:
 
-    `GET /contact`
+    `GET /contacts`
  
  Para se listar um contato deve-se ultilizar o seguinte endpoint:
  
-     `GET /contact/ID`
+     `GET /contacts/ID`
 
 ### Criando contato
 
@@ -113,7 +113,7 @@ Atributo | Descrição
 ### Editando contato
 
 ```http
-PATCH /contact/ID HTTP/1.1
+PATCH /contacts/ID HTTP/1.1
 Authorization: Bearer YourTokenComesHere
 Accept: application/json
 User-Agent: Http/2.2
@@ -190,21 +190,6 @@ Atributo | Descrição
 GET /contacts HTTP/1.1
 Authorization: Bearer YourTokenComesHere
 Accept: application/json
-User-Agent: Http/2.2
-Host: HOST
-
-{
-    
-}
-```
-
-> Se houver contatos o retorno será o seguinte:
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
     "count": 2,
     "items": [
         {
@@ -260,20 +245,6 @@ Atributo | Descrição
 GET /contacts/1 HTTP/1.1
 Authorization: Bearer YourTokenComesHere
 Accept: application/json
-User-Agent: Http/2.2
-Host: HOST
-
-{
-    
-}
-```
-
-> Se houver contato com o ID o retorno será o seguinte:
-
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-
 {
    "createAt": "2016-06-17T18:21:23+00:00",
    "id": 1,
