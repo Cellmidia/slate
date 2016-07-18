@@ -30,13 +30,14 @@ Para se deletar uma ação deve-se ultilizar o seguinte endpoint:
     
 ## Status
 
-
-+ CREATED
-+ TESTED
-+ REJECT
-+ APPROVED
-+ SCHEDULED
-+ PROCESSED
+Status | Descrição
+--------- | -----------
++ CREATED | Ação foi criada
++ TESTED | Ação em testes
++ REJECT | Ação rejeitada
++ APPROVED | Ação aprovada
++ SCHEDULED | Ação agendada
++ PROCESSED | Ação enviada
 
 ### Criando a ação
 
