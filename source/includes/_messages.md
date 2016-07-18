@@ -20,6 +20,17 @@ Para se listar uma mensagem deve-se ultilizar o seguinte endpoint:
 
     `GET /messages/ID`    
 
+## Status
+
+Status | Descrição
+--------- | -----------
++ CREATED | Mensagem criada
++ SENT | Mensagem enviada
++ DELIVERED | Mensagem entregue
++ SYSTEM_ERROR | Erro de sistema
++ RECEIVER_ERROR | Erro do gateway
++ OPERATOR_ERROR | Erro da operadora telefonica
+
 ### Criando mensagem
 
 ```http
