@@ -154,7 +154,7 @@ Content-Type: application/json
           "from": "Alguem",
           "id": 9,
           "message": "abcdefghigjkl",
-          "email": "leonardo@cellmidia.com.br"
+          "email": "leonardo@cellmidia.com.br",
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "to": 554899963369,
           "type": "SMS"
