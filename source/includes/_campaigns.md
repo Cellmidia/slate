@@ -28,6 +28,16 @@ Para se deletar uma ação deve-se ultilizar o seguinte endpoint:
 
     `DELETE /campaigns/ID`
     
+## Status
+
+
++ CREATED
++ TESTED
++ REJECT
++ APPROVED
++ SCHEDULED
++ PROCESSED
+
 ### Criando a ação
 
 ```http
