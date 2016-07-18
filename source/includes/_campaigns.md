@@ -58,7 +58,7 @@ Content-Type: application/json
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "title": "This is a title",
   "sender": "Something",
-  "status": "created
+  "status": "created",
   "schedule": "2016-07-12 13:00"
 }
 ```
@@ -149,7 +149,7 @@ Content-Type: application/json
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "title": "This is a modified",
   "sender": "Modified",
-  "status": "created,
+  "status": "created",
   "schedule": "2016-07-12 13:00"
 }
 ```
@@ -214,7 +214,7 @@ Content-Type: application/json
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "title": "This is a title",
           "sender": "Something",
-          "status": "created
+          "status": "created",
           "schedule": "2016-07-12 13:00",
           "statuses": [
               {
@@ -244,7 +244,7 @@ Content-Type: application/json
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "title": "This is a title",
           "sender": "Something",
-          "status": "created,
+          "status": "created",
           "schedule": null,
           "statuses": [
                 {
@@ -307,7 +307,7 @@ Content-Type: application/json
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "title": "This is a modified",
   "sender": "Modified",
-  "status": "created,
+  "status": "created",
   "schedule": "2016-07-12 13:00"
 }
 ```
