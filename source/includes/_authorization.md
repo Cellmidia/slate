@@ -93,7 +93,8 @@ User-Agent: Http/2.2
 Host id.cellmidia.com.br
 
 {
-    "type": "token"
+    "type": "token",
+    "token": "e7032dd7c38240bbdc4a79452aa07192784be680"
 }
 ```
 > Response
