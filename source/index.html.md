@@ -44,7 +44,7 @@ Qualquer biblioteca existente deve dar conta disso para você.
 API Endpoint
 ----------------
 
-A API endpoint da Cellmidia API é: `http://api.smsapp.com.br`
+A API endpoint da Cellmidia API é: `http://api.smsapp.com.br/v1`
 
 NOTA: Nessa fase as chamadas de API podem serem feitas sem uso do HTTPS, mas na próxima
 atualização o uso de SSL será obrigatória.
