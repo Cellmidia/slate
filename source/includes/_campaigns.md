@@ -237,16 +237,14 @@ Content-Type: application/json
                 "date": "2016-07-18T14:37:41+00:00"
               }
             ],
-        "messages": [
-            {
+          "messages": {
               "sent": 1500,
-              "delievered": 100,
+              "delivered": 100,
               "system.error": 0,
               "receiver.error": 2,
               "operator.error": 0,
               "total": 1602
             }
-          ]
         },
         {
           "content": "This is a content",
@@ -263,16 +261,14 @@ Content-Type: application/json
                     "date": "2016-06-17T18:21:23+00:00"
                 }
             ],
-        "messages": [
-            {
+          "messages": {
               "sent": 1500,
-              "delievered": 100,
+              "delivered": 100,
               "system.error": 0,
               "receiver.error": 2,
               "operator.error": 0,
               "total": 1602
             }
-          ]
         }
     ]
 }
@@ -319,7 +315,21 @@ Content-Type: application/json
   "title": "This is a modified",
   "sender": "Modified",
   "status": "created",
-  "schedule": "2016-07-12 13:00"
+  "schedule": "2016-07-12 13:00",
+  "statuses": [
+    {
+      "status": "created",
+      "date": "2016-06-17T18:21:23+00:00"
+    }
+  ],
+  "messages": {
+    "sent": 1500,
+    "delivered": 100,
+    "system.error": 0,
+    "receiver.error": 2,
+    "operator.error": 0,
+    "total": 1602
+  }
 }
 ```
 
