@@ -28,6 +28,12 @@ Para se deletar uma ação deve-se ultilizar o seguinte endpoint:
 
     `DELETE /campaigns/ID`
     
+Para disparar os testes para aprovação da Ação deve-se utilizar o seguinte endpoint:
+    `POST /dev/campaign/ID/message`
+
+Para recuperar os status dos testes e a aprovação da Ação deve-se utilizar o seguinte endpoint:
+    `GET /dev/campaign/ID/message`
+    
 ## Status
 
 Status | Descrição
@@ -367,7 +373,7 @@ Atributo | Descrição
 
 ### Excluindo a ação
 
-Para se excluir uma ação é necessário um ID e que o status da ação é seja 'Criado'
+Para se excluir uma ação é necessário um ID e que o status da ação seja 'Criado'
 ```http
 DELETE /capaigns/ID HTTP/1.1
 Authorization: Bearer YourTokenComesHere
@@ -397,3 +403,87 @@ Content-Type: application/json
 Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
 ID | Sim | Unique e int
+
+### Disparando Testes para a Ação
+
+Para enviar os testes da campanha
+```http
+POST /campaigns/23/message HTTP/1.1
+Accept: application/json
+Authorization: Bearer YourTokenComesHere
+Content-Type: application/json
+Host: api.cellmidia.dev:8090
+Origin: http://localhost:9005
+{"targets":["554891567278","554823239898","554893456363"]}
+```
+
+ **PARÂMETROS DO PAYLOAD**
+
+Argumento | Obrigatório | Observações
+--------- | ----------- | -----------
+targets |  SIM | Array de números de telefones no máximo 5
+
+
+### Capturandos as respostas do Teste de Ação
+
+Para obter os resultados dos testes enviados
+
+```http
+GET /dev/campaigns/23/message HTTP/1.1
+Accept: application/json
+Authorization: Bearer YourTokenComesHere
+Content-Type: application/json
+Host: api.cellmidia.dev:8090
+Origin: http://localhost:9005
+{
+  "targets": [
+    {
+      "id": 1,
+      "name": "Beth",
+      "phone": 554823239898,
+      "status": {
+        "status": "approved",
+        "date": "2016-07-22T18:27:46+00:00"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Pedro",
+      "phone": 554891567278,
+      "status": {
+        "status": "approved",
+        "date": "2016-07-22T18:27:46+00:00"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Joaquin",
+      "phone": 554893456363,
+      "status": {
+        "status": "approved",
+        "date": "2016-07-22T18:27:46+00:00"
+      }
+    }
+  ],
+  "status": {
+    "status": "approved",
+    "date": "2016-07-22T19:27:46+00:00"
+  }
+}
+```
+
+* Response
+
+Atributo | Descrição
+-------- | ---------
++ targets | Array com as respostas dos contatos
++ id | Inteiro Id do contato
++ name | String nome do contato, se já cadastrado
++ phone | Inteiro número de telefone usado no teste
++ status | Objeto 
++ status.status | String Resposta do teste (APPROVED, REJECT)
++ status.date | Date Data de envio da resposta
++ campaign.status | String Status atual da Ação (APPROVED, REJECT)
++ campaign.date | Date Data da alteração
+
+
