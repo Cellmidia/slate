@@ -424,12 +424,12 @@ Argumento | Obrigatório | Observações
 targets |  SIM | Array de números de telefones no máximo 5
 
 
-### Capturandos as respostas do Teste de Ação
+### Capturando as respostas do Teste
 
 Para obter os resultados dos testes enviados
 
 ```http
-GET /dev/campaigns/23/message HTTP/1.1
+GET /campaigns/23/message HTTP/1.1
 Accept: application/json
 Authorization: Bearer YourTokenComesHere
 Content-Type: application/json
@@ -457,7 +457,7 @@ Origin: http://localhost:9005
     },
     {
       "id": 13,
-      "name": "Joaquin",
+      "name": "Joaquim",
       "phone": 554893456363,
       "status": {
         "status": "approved",
