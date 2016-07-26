@@ -29,11 +29,14 @@ Para se deletar uma ação deve-se ultilizar o seguinte endpoint:
     `DELETE /campaigns/ID`
     
 Para disparar os testes para aprovação da Ação deve-se utilizar o seguinte endpoint:
+
     `POST /dev/campaign/ID/message`
 
 Para recuperar os status dos testes e a aprovação da Ação deve-se utilizar o seguinte endpoint:
+
     `GET /dev/campaign/ID/message`
     
+   
 ## Status
 
 Status | Descrição
@@ -106,7 +109,7 @@ Atributo | Descrição
 -------- | ---------
 + id | Representa uma ID
 + createdAt  | Representa a data de criação
-+ modifieddAt  | Representa a data de modificação
++ modifiedAt  | Representa a data de modificação
 + content | Representa um texto de mensagem
 + title | Representa o nome da ação
 + sender | Representa o remetente da ação
@@ -129,7 +132,7 @@ Atributo | Descrição
 -------- | ---------
 + id | Novo ID
 + createdAt  | DateTime atual
-+ modifieddAt  | DateTime atual
++ modifiedAt  | DateTime atual
 + content | A mesma usada na solicitação
 + title | A mesma usada na solicitação
 + sender | A mesma usada na solicitação
@@ -206,7 +209,7 @@ Atributo | Descrição
 -------- | ---------
 + id | A mesma gerada na criação
 + createdAt  | A mesma gerada na criação
-+ modifieddAt  | A mesma gerada na criação
++ modifiedAt  | A mesma gerada na criação
 + content | A mesma usada na solicitação
 + title | A mesma usada na solicitação
 + sender | A mesma usada na solicitação
@@ -364,7 +367,7 @@ Atributo | Descrição
 -------- | ---------
 + id | A mesma gerada na criação
 + createdAt  | A mesma gerada na criação
-+ modifieddAt  | A mesma gerada na criação
++ modifiedAt  | A mesma gerada na criação
 + content | A mesma usada na criação
 + title | A mesma usada na criação
 + sender | A mesma usada na criação

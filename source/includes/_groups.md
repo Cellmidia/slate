@@ -76,7 +76,7 @@ Atributo | Descrição
 -------- | ---------
 + id | Representa uma ID
 + createdAt  | Representa a data de criação
-+ modifieddAt  | Representa a data de modificação
++ modifiedAt  | Representa a data de modificação
 + name | Representa o nome da lista
 + icon | Representa o icone da lista
 + status | Representa o status da lista
@@ -95,7 +95,7 @@ Atributo | Descrição
 -------- | ---------
 + id | Novo ID
 + createdAt  | DateTime atual
-+ modifieddAt  | DateTime atual
++ modifiedAt  | DateTime atual
 + name | A mesma usada na solicitação
 + status | A constante ACTIVE
 + url | A mesma usada na solicitação
@@ -154,7 +154,7 @@ Atributo | Descrição
 -------- | ---------
 + id | O mesmo usada na criação
 + createdAt  | A mesma usada na criação
-+ modifieddAt  | A mesma usada na criação
++ modifiedAt  | A mesma usada na criação
 + name | A mesma usada na solicitação
 + status | A mesma usada na criação
 
@@ -259,7 +259,7 @@ Atributo | Descrição
 -------- | ---------
 + id | O mesmo usada na criação
 + createdAt  | A mesma usada na criação
-+ modifieddAt  | A mesma usada na criação
++ modifiedAt  | A mesma usada na criação
 + name | A mesma usada na solicitação
 + status | A mesma usada na criação
 + icon | A mesma usada na criação

@@ -91,7 +91,7 @@ Atributo | Descrição
 -------- | ---------
 + id | Representa uma ID
 + createdAt  | Representa a data de criação
-+ modifieddAt  | Representa a data de modificação
++ modifiedAt  | Representa a data de modificação
 + message | Representa o texto da mensagem
 + owner | Representa uma account
 + from | Representa o remetente
@@ -114,7 +114,7 @@ Atributo | Descrição
 -------- | ---------
 + id | Novo ID
 + createdAt  | DateTime atual
-+ modifieddAt  | DateTime atual
++ modifiedAt  | DateTime atual
 + message | A mesma usada na solicitação
 + from | A mesma usada na solicitação
 + to | A mesma usada na solicitação
@@ -248,7 +248,7 @@ Atributo | Descrição
 -------- | ---------
 + id | Mesmo ID usado na solicitação
 + createdAt  | Dado criado anteriormente 
-+ modifieddAt  | Dado criado anteriormente
++ modifiedAt  | Dado criado anteriormente
 + message | Dado criado anteriormente
 + from | Dado criado anteriormente
 + to | Dado criado anteriormente

@@ -86,7 +86,7 @@ Atributo | Descrição
 + email | Representa o email do contato
 + phone | Representa o celular do contato
 + createdAt  | Representa a data de criação
-+ modifieddAt  | Representa a data de modificação
++ modifiedAt  | Representa a data de modificação
 + status | Representa o status do contato
 
 
@@ -104,7 +104,7 @@ Atributo | Descrição
 -------- | ---------
 + id | Novo ID
 + createdAt  | DateTime atual
-+ modifieddAt  | DateTime atual
++ modifiedAt  | DateTime atual
 + name | A mesma usada na solicitação
 + email | A mesma usada na solicitação
 + phone | A mesma usada na solicitação
@@ -178,7 +178,7 @@ Atributo | Descrição
 -------- | ---------
 + id | A mesma gerada na criação
 + createdAt  | A mesma gerada na criação
-+ modifieddAt  | A mesma gerada na criação
++ modifiedAt  | A mesma gerada na criação
 + name | A mesma usada na solicitação
 + email | A mesma usada na solicitação
 + phone | A mesma usada na solicitação
@@ -280,7 +280,7 @@ Atributo | Descrição
 -------- | ---------
 + id | A mesma gerada na criação
 + createdAt  | A mesma gerada na criação
-+ modifieddAt  | A mesma gerada na criação
++ modifiedAt  | A mesma gerada na criação
 + name | A mesma gerada na criação
 + email | A mesma gerada na criação
 + phone | A mesma gerada na criação
