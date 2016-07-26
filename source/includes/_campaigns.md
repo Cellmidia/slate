@@ -414,7 +414,13 @@ Authorization: Bearer YourTokenComesHere
 Content-Type: application/json
 Host: api.cellmidia.dev:8090
 Origin: http://localhost:9005
-{"targets":["554891567278","554823239898","554893456363"]}
+{
+  "targets": [
+    "554891567278",
+    "554823239898",
+    "554893456363"
+  ]
+}
 ```
 
  **PARÂMETROS DO PAYLOAD**
