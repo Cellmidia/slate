@@ -317,28 +317,33 @@ Authorization: Bearer YourTokenComesHere
 Content-Type: application/json
 
 {
-  "content": "This is a modified",
-  "createAt": "2016-06-17T18:21:23+00:00",
-  "id": 1,
-  "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-  "title": "This is a modified",
-  "sender": "Modified",
-  "status": "created",
-  "schedule": "2016-07-12 13:00",
-  "statuses": [
-    {
-      "status": "created",
-      "date": "2016-06-17T18:21:23+00:00"
+{
+    "content": "This is a content",
+    "createAt": "2016-06-17T18:21:23+00:00",
+    "id": 1,
+    "lastModifiedAt": "2016-06-17T18:21:23+00:00",
+    "title": "This is a title",
+    "sender": "Something",
+    "status": "created",
+    "schedule": "2016-07-12 13:00",
+    "statuses": [
+        {
+             "status": "created",
+             "date": "2016-07-18T14:27:41+00:00"
+        },
+        {
+            "status": "tested",
+            "date": "2016-07-18T14:37:41+00:00"
+        }
+    ],
+    "messages": {
+        "sent": 1500,
+        "delivered": 100,
+        "system.error": 0,
+        "receiver.error": 2,
+        "operator.error": 0,
+        "total": 1602
     }
-  ],
-  "messages": {
-    "sent": 1500,
-    "delivered": 100,
-    "system.error": 0,
-    "receiver.error": 2,
-    "operator.error": 0,
-    "total": 1602
-  }
 }
 ```
 

@@ -35,6 +35,7 @@ Status | Descrição
 
 ```http
 POST /messages HTTP/1.1
+Authorization: Bearer YourTokenComesHere
 Accept: application/json
 User-Agent: Http/2.2
 Host: HOST
@@ -55,12 +56,12 @@ Content-Type: application/json
 
 {
   "createAt": "2016-06-17T18:21:23+00:00",
-  "from": "Aaa",
+  "from": "Something",
   "id": 9,
-  "message": "abcdefghigjkl",
+  "message": "This is a message",
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-  "to": 554899963369,
-  "type": "MMS"
+  "to": 554899246868,
+  "type": "SMS"
 }
 ```
 > Se a mensagem estiver incorreta o retorno será o seguinte:
@@ -131,19 +132,8 @@ ID | Sim | Unique e int
 
 ```http
 GET /messages HTTP/1.1
+Authorization: Bearer YourTokenComesHere
 Accept: application/json
-User-Agent: Http/2.2
-Host: HOST
-
-{
-    
-}
-```
-
-> Se houver mensagens o retorno será o seguinte:
-
-```http
-HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
@@ -151,12 +141,11 @@ Content-Type: application/json
     "items": [
         {
           "createAt": "2016-06-17T18:21:23+00:00",
-          "from": "Alguem",
+          "from": "Something",
           "id": 9,
-          "message": "abcdefghigjkl",
-          "email": "leonardo@cellmidia.com.br",
+          "message": "This is a message",
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-          "to": 554899963369,
+          "to": 554899246868,
           "type": "SMS"
         },
         {
@@ -165,8 +154,8 @@ Content-Type: application/json
           "id": 10,
           "message": "This is a message",
           "lastModifiedAt": "2016-06-17T18:52:31+00:00",
-          "to": 554899393369,
-          "type": "MMS"
+          "to": 554899999999,
+          "type": "SMS"
         }
     ]
 }
@@ -201,25 +190,18 @@ Atributo | Descrição
 ### Detalhes de uma Mensagem
 
 ```http
-GET /messages/1 HTTP/1.1
+GET /messages/9 HTTP/1.1
+Authorization: Bearer YourTokenComesHere
 Accept: application/json
-User-Agent: Http/2.2
-Host: HOST
-```
-
-> Se houver a mensagem o retorno será o seguinte:
-
-```http
-HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
     "createAt": "2016-06-17T18:21:23+00:00",
-    "from": "User",
-    "id": 1,
+    "from": "Something",
+    "id": 9,
     "message": "This is a message",
     "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-    "to": 554899963369,
+    "to": 554899246868,
     "type": "SMS"
 }
 ```

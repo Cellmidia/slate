@@ -196,7 +196,7 @@ Accept: application/json
           "createAt": "2016-06-17T18:21:23+00:00",
           "id": 1,
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-          "name": "Leonardo",
+          "name": "Leonardo Novo",
           "email": "leonardo@cellmidia.com.br",
           "phone": "554899999999",
           "status": "active"
@@ -249,7 +249,7 @@ Accept: application/json
    "createAt": "2016-06-17T18:21:23+00:00",
    "id": 1,
    "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-   "name": "Leonardo",
+   "name": "Leonardo Novo",
    "email": "leonardo@cellmidia.com.br",
    "phone": "554899999999",
    "status": "active"

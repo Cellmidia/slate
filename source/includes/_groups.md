@@ -181,7 +181,7 @@ Content-Type: application/json
         },
         {
             "id": 2,
-            "name": "Bad list",
+            "name": "New list",
             "createAt": "2016-06-17T18:21:23+00:00",
             "lastModifiedAt": "2016-06-17T18:21:23+00:00",
             "status": "active"
