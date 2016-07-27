@@ -8,23 +8,23 @@ Recursos de ação é a representação de uma ação que poderá ser enviada pe
 
 ## Ação
 
-Para se criar uma ação deve-se ultilizar o seguinte endpoint:
+Para criar uma ação deve-se ultilizar o seguinte endpoint:
 
     `POST /campaigns`
 
-Para se editar uma ação deve-se ultilizar o seguinte endpoint:
+Para editar uma ação deve-se ultilizar o seguinte endpoint:
 
     `PATCH /campaigns/ID`
     
-Para se listar todas as ação deve-se ultilizar o seguinte endpoint:
+Para listar todas as ações deve-se ultilizar o seguinte endpoint:
 
     `GET /campaigns`
  
-Para se listar todas as ação deve-se ultilizar o seguinte endpoint:
+Para listar uma ação deve-se ultilizar o seguinte endpoint:
 
     `GET /campaigns/ID`
     
-Para se deletar uma ação deve-se ultilizar o seguinte endpoint:
+Para deletar uma ação deve-se ultilizar o seguinte endpoint:
 
     `DELETE /campaigns/ID`
     
@@ -72,13 +72,13 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "content": "This is a content",
-  "createAt": "2016-06-17T18:21:23+00:00",
   "id": 1,
-  "lastModifiedAt": "2016-06-17T18:21:23+00:00",
+  "content": "This is a content",
   "title": "This is a title",
   "sender": "Something",
   "status": "created",
+  "createAt": "2016-06-17T18:21:23+00:00",
+  "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "schedule": "2016-07-12 13:00"
 }
 ```
@@ -163,13 +163,13 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "content": "This is a modified",
-  "createAt": "2016-06-17T18:21:23+00:00",
   "id": 1,
-  "lastModifiedAt": "2016-06-17T18:21:23+00:00",
+  "content": "This is a modified",
   "title": "This is a modified",
   "sender": "Modified",
   "status": "created",
+  "createAt": "2016-06-17T18:21:23+00:00",
+  "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "schedule": "2016-07-12 13:00"
 }
 ```
@@ -228,13 +228,13 @@ Content-Type: application/json
     "count": 2,
     "items": [
         {
-          "content": "This is a content",
-          "createAt": "2016-06-17T18:21:23+00:00",
           "id": 1,
-          "lastModifiedAt": "2016-06-17T18:21:23+00:00",
+          "content": "This is a content",
           "title": "This is a title",
           "sender": "Something",
           "status": "created",
+          "createAt": "2016-06-17T18:21:23+00:00",
+          "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "schedule": "2016-07-12 13:00",
           "statuses": [
               {
@@ -256,13 +256,13 @@ Content-Type: application/json
             }
         },
         {
-          "content": "This is a content",
-          "createAt": "2016-06-17T18:21:23+00:00",
           "id": 2,
-          "lastModifiedAt": "2016-06-17T18:21:23+00:00",
+          "content": "This is a content",
           "title": "This is a title",
           "sender": "Something",
           "status": "created",
+          "createAt": "2016-06-17T18:21:23+00:00",
+          "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "schedule": null,
           "statuses": [
                 {
@@ -283,7 +283,7 @@ Content-Type: application/json
 }
 ```
 
-> Se não houver ações o retorno será o seguinte:
+> Se não houverem ações o retorno será o seguinte:
 
 ```http
 HTTP/1.1 200 OK
@@ -318,13 +318,13 @@ Content-Type: application/json
 
 {
 {
-    "content": "This is a content",
-    "createAt": "2016-06-17T18:21:23+00:00",
     "id": 1,
-    "lastModifiedAt": "2016-06-17T18:21:23+00:00",
+    "content": "This is a content",
     "title": "This is a title",
     "sender": "Something",
     "status": "created",
+    "createAt": "2016-06-17T18:21:23+00:00",
+    "lastModifiedAt": "2016-06-17T18:21:23+00:00",
     "schedule": "2016-07-12 13:00",
     "statuses": [
         {
@@ -347,7 +347,7 @@ Content-Type: application/json
 }
 ```
 
-> Se não houver ação o retorno será o seguinte:
+> Se não houver nenhuma ação o retorno será o seguinte:
 
 ```http
 HTTP/1.1 200 OK

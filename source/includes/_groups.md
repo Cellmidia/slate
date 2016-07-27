@@ -8,23 +8,23 @@ Recursos de listas é a representação de um grupo de contatos que poderá ser 
 
 ## Lista
 
-Para se criar uma lista deve-se ultilizar o seguinte endpoint:
+Para criar uma lista deve-se ultilizar o seguinte endpoint:
 
     `POST /groups`
 
-Para se editar uma lista deve-se ultilizar o seguinte endpoint:
+Para editar uma lista deve-se ultilizar o seguinte endpoint:
 
     `PATCH /groups/ID`
     
-Para se listar todas as listas deve-se ultilizar o seguinte endpoint:
+Para listar todas as listas deve-se ultilizar o seguinte endpoint:
 
     `GET /groups`
  
-Para se listar uma lista deve-se ultilizar o seguinte endpoint:
+Para listar uma lista deve-se ultilizar o seguinte endpoint:
 
     `GET /groups/ID`
     
-Para se deletar uma lista deve-se ultilizar o seguinte endpoint:
+Para deletar uma lista deve-se ultilizar o seguinte endpoint:
 
     `DELETE /groups/ID`
     
@@ -58,7 +58,7 @@ Content-Type: application/json
   "icon": "URL"
 }
 ```
-> Se a ação estiver incorreta o retorno será o seguinte:
+> Se a lista estiver incorreta o retorno será o seguinte:
 
 ```http
 HTTP/1.1 409 Conflict
@@ -130,7 +130,7 @@ Content-Type: application/json
   "icon": "URL"
 }
 ```
-> Se a ação estiver incorreta o retorno será o seguinte:
+> Se a lista estiver incorreta o retorno será o seguinte:
 
 ```http
 HTTP/1.1 409 Conflict
@@ -191,7 +191,7 @@ Content-Type: application/json
 }
 ```
 
-> Se não houver ações o retorno será o seguinte:
+> Se não houverem listas o retorno será o seguinte:
 
 ```http
 HTTP/1.1 200 OK
@@ -234,7 +234,7 @@ Content-Type: application/json
 }
 ```
 
-> Se não houver ação o retorno será o seguinte:
+> Se não houver nenhuma lista o retorno será o seguinte:
 
 ```http
 HTTP/1.1 200 OK

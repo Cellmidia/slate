@@ -161,7 +161,7 @@ Content-Type: application/json
 }
 ```
 
-> Se não houver mensagens o retorno será o seguinte:
+> Se não houverem mensagens o retorno será o seguinte:
 
 ```http
 HTTP/1.1 200 OK
@@ -206,7 +206,7 @@ Content-Type: application/json
 }
 ```
 
-> Se não houver mensagens com esse ID o retorno será o seguinte:
+> Se não houver nenhuma mensagem com esse ID o retorno será o seguinte:
 
 ```http
 HTTP/1.1 200 OK

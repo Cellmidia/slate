@@ -8,19 +8,19 @@ Recursos de contatos é a representação de uma contato que poderá ser importa
 
 ## Contato
 
-Para se criar um contato deve-se ultilizar o seguinte endpoint:
+Para criar um contato deve-se ultilizar o seguinte endpoint:
 
     `POST /contacts`
 
-Para se editar um contato deve-se ultilizar o seguinte endpoint:
+Para editar um contato deve-se ultilizar o seguinte endpoint:
 
     `PATCH /contacts/ID`
     
-Para se listar todos os contato deve-se ultilizar o seguinte endpoint:
+Para listar todos os contatos deve-se ultilizar o seguinte endpoint:
 
     `GET /contacts`
  
- Para se listar um contato deve-se ultilizar o seguinte endpoint:
+Para listar um contato deve-se ultilizar o seguinte endpoint:
  
      `GET /contacts/ID`
 
@@ -56,7 +56,7 @@ Content-Type: application/json
   "status": "active"
 }
 ```
-> Se o contato estiver incorreta o retorno será o seguinte:
+> Se o contato estiver incorreto o retorno será o seguinte:
 
 ```http
 HTTP/1.1 409 Conflict
@@ -133,16 +133,16 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 {
-  "createAt": "2016-06-17T18:21:23+00:00",
   "id": 1,
-  "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "name": "Leonardo Novo",
   "email": "leonardo@cellmidia.com.br",
   "phone": "554899999999",
+  "createAt": "2016-06-17T18:21:23+00:00",
+  "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "status": "active"
 }
 ```
-> Se o contato estiver incorreta o retorno será o seguinte:
+> Se o contato estiver incorreto o retorno será o seguinte:
 
 ```http
 HTTP/1.1 409 Conflict
@@ -193,28 +193,28 @@ Accept: application/json
     "count": 2,
     "items": [
         {
-          "createAt": "2016-06-17T18:21:23+00:00",
           "id": 1,
-          "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "name": "Leonardo Novo",
           "email": "leonardo@cellmidia.com.br",
           "phone": "554899999999",
+          "createAt": "2016-06-17T18:21:23+00:00",
+          "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "status": "active"
         },
         {
-          "createAt": "2016-06-17T18:21:23+00:00",
           "id": 2,
-          "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "name": "Leonardo",
           "email": "leonardo@cellmidia.com.br",
           "phone": "554899999999",
+          "createAt": "2016-06-17T18:21:23+00:00",
+          "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "status": "active"
         }
     ]
 }
 ```
 
-> Se não houver contatos o retorno será o seguinte:
+> Se não houverem contatos o retorno será o seguinte:
 
 ```http
 HTTP/1.1 200 OK
@@ -246,17 +246,17 @@ GET /contacts/1 HTTP/1.1
 Authorization: Bearer YourTokenComesHere
 Accept: application/json
 {
-   "createAt": "2016-06-17T18:21:23+00:00",
    "id": 1,
-   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
    "name": "Leonardo Novo",
    "email": "leonardo@cellmidia.com.br",
    "phone": "554899999999",
+   "createAt": "2016-06-17T18:21:23+00:00",
+   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
    "status": "active"
 }
 ```
 
-> Se não houver contatos o retorno será o seguinte:
+> Se não houver nenhum contatos o retorno será o seguinte:
 
 ```http
 HTTP/1.1 200 OK
