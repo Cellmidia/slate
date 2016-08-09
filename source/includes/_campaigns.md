@@ -44,9 +44,12 @@ Status | Descrição
 + CREATED | Ação foi criada
 + TESTED | Ação em testes
 + REJECT | Ação rejeitada
++ CANCELED | Ação cancelada
 + APPROVED | Ação aprovada
 + SCHEDULED | Ação agendada
 + PROCESSED | Ação enviada
++ FINISHED | Ação finalizada
++ ERROR | Houve um erro no disparo da ação
 
 ### Criando a ação
 
