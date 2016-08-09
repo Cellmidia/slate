@@ -114,7 +114,7 @@ Atributo | Descrição
 + title | Representa o nome da ação
 + sender | Representa o remetente da ação
 + status | Representa o status da ação
-+ schedule | Representa o agendamento da açãp
++ schedule | Representa a data de agendamento da ação
 
 
  **PARÂMETROS DO PAYLOAD**
@@ -124,7 +124,7 @@ Argumento | Obrigatório | Observações
 content |  Sim | String entre 10-150 caracteres
 title | Sim | String entre 4-60 caracteres
 sender | Sim | String entre 4-10 caracteres
-schedule | Não | Data
+schedule | Não | Data (Y-m-d H:m)
 
 * Response
 
@@ -153,6 +153,7 @@ Host: HOST
     "title": "This is a modified",
     "content": "This is a modified",
     "sender": "Modified",
+    "schedule":"2016-08-09 13:47"
 }
 ```
 
@@ -170,7 +171,7 @@ Content-Type: application/json
   "status": "created",
   "createAt": "2016-06-17T18:21:23+00:00",
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-  "schedule": "2016-07-12 13:00"
+  "schedule": "2016-08-09T13:47:00+00:00"
 }
 ```
 > Se a ação estiver incorreta o retorno será o seguinte:
@@ -180,7 +181,7 @@ HTTP/1.1 409 Conflict
 Content-Type: application/json
 
 {
-    "error": "The content \"invalid\" needs to be between 10 and 150 chars.",
+    "error": "The 'content' needs to be between 10 and 150 chars.",
     "code": 409
 }
 ```
@@ -189,9 +190,10 @@ Content-Type: application/json
 
 Argumento | Mensagem
 --------- | -----------
-content | The content "invalid" needs to be between 10 and 150 chars.
-title | The title "invalid" needs to be between 4 and 60 chars.
-sender | The sender "invalid" needs to be between 3 and 10 chars.
+content | The content needs to be between 10 and 150 chars.
+title | The title needs to be between 4 and 60 chars.
+sender | The sender needs to be between 3 and 10 chars.
+schedule | Schedule needs to be a date in format: Y-m-d H:M
 
 
 
@@ -202,6 +204,7 @@ Argumento | Obrigatório | Observações
 content |  Não | String entre 10-150 caracteres
 title | Não | String entre 4-60 caracteres
 sender | Não | String entre 4-10 caracteres
+schedule | Não | DateTime no futuro Y-m-d H:M
 
 * Response
 
@@ -214,6 +217,7 @@ Atributo | Descrição
 + title | A mesma usada na solicitação
 + sender | A mesma usada na solicitação
 + status | A mesma gerada na criação
++ schedule | A data do agendamento
 
 
 
@@ -235,7 +239,7 @@ Content-Type: application/json
           "status": "created",
           "createAt": "2016-06-17T18:21:23+00:00",
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-          "schedule": "2016-07-12 13:00",
+          "schedule": "",
           "statuses": [
               {
                 "status": "created",
@@ -263,12 +267,16 @@ Content-Type: application/json
           "status": "created",
           "createAt": "2016-06-17T18:21:23+00:00",
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-          "schedule": null,
+          "schedule": "2016-08-09T13:47:00+00:00",
           "statuses": [
                 {
                     "status": "created",
                     "date": "2016-06-17T18:21:23+00:00"
-                }
+                },
+                {
+					"status": "scheduled",
+					"date": "2016-06-17T18:21:23+00:00"
+				}
             ],
           "messages": {
               "sent": 1500,
@@ -325,7 +333,7 @@ Content-Type: application/json
     "status": "created",
     "createAt": "2016-06-17T18:21:23+00:00",
     "lastModifiedAt": "2016-06-17T18:21:23+00:00",
-    "schedule": "2016-07-12 13:00",
+    "schedule": "",
     "statuses": [
         {
              "status": "created",
@@ -381,7 +389,7 @@ Atributo | Descrição
 
 ### Excluindo a ação
 
-Para se excluir uma ação é necessário um ID e que o status da ação seja 'Criado'
+Para se excluir uma ação é necessário um ID e que o status da ação seja entre 'Criado', 'Teste', 'Cancelado' ou "Agendado"
 ```http
 DELETE /capaigns/ID HTTP/1.1
 Authorization: Bearer YourTokenComesHere
