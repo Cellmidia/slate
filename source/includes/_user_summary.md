@@ -1,4 +1,4 @@
-# GET /users/{id}/info
+# GET /users/{id}/summary
 
 + Request (application/json)
 
@@ -19,18 +19,17 @@
                         "sent": 10
                     },
                     "contacts": {
-                        "total": 230,
-                        "new": 15
+                        "total": 230
                     },
                     "actions": {
                         "total": 10
                     },
                     "groups": {
-                        "total": 25,
-                        "new": 3
+                        "total": 25
                     }
                 }
             }
+
 
 
 
