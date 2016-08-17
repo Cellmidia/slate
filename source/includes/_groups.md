@@ -5,26 +5,29 @@ Visão Geral
 
 Recursos de listas é a representação de um grupo de contatos que poderá ser criado pelo Cliente.
 
-
 ## Lista
 
 Para criar uma lista deve-se ultilizar o seguinte endpoint:
 
     `POST /groups`
 
-Para editar uma lista deve-se ultilizar o seguinte endpoint:
+Para editar uma lista deve-se utilizar o seguinte endpoint:
 
     `PATCH /groups/ID`
     
-Para listar todas as listas deve-se ultilizar o seguinte endpoint:
+Para adicionar um contato à lista deve-se utilizar o seguinte endpoint:
+
+    `PATCH /groups/ID`
+    
+Para listar todas as listas deve-se utilizar o seguinte endpoint:
 
     `GET /groups`
  
-Para listar uma lista deve-se ultilizar o seguinte endpoint:
+Para listar uma lista deve-se utilizar o seguinte endpoint:
 
     `GET /groups/ID`
     
-Para deletar uma lista deve-se ultilizar o seguinte endpoint:
+Para deletar uma lista deve-se utilizar o seguinte endpoint:
 
     `DELETE /groups/ID`
     
@@ -52,12 +55,14 @@ Content-Type: application/json
 {
   "id": 1,
   "name": "New list",
+  "contacts": "0",
   "createAt": "2016-06-17T18:21:23+00:00",
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "status": "active",
   "icon": "URL"
 }
 ```
+
 > Se a lista estiver incorreta o retorno será o seguinte:
 
 ```http
@@ -79,6 +84,7 @@ Atributo | Descrição
 + modifiedAt  | Representa a data de modificação
 + name | Representa o nome da lista
 + icon | Representa o icone da lista
++ contacts | Contador de contatos
 + status | Representa o status da lista
 
 
@@ -89,7 +95,7 @@ Argumento | Obrigatório | Observações
 name |  Sim | String entre 6-128 caracteres
 icon | Não | URL
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -97,6 +103,7 @@ Atributo | Descrição
 + createdAt  | DateTime atual
 + modifiedAt  | DateTime atual
 + name | A mesma usada na solicitação
++ contacts | Contador de contatos
 + status | A constante ACTIVE
 + url | A mesma usada na solicitação
 
@@ -124,6 +131,7 @@ Content-Type: application/json
 {
   "id": 1,
   "name": "New edited list",
+  "contacts": "0",
   "createAt": "2016-06-17T18:21:23+00:00",
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "status": "active",
@@ -148,7 +156,7 @@ Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
 name |  Sim | String entre 6-128 caracteres
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -156,8 +164,60 @@ Atributo | Descrição
 + createdAt  | A mesma usada na criação
 + modifiedAt  | A mesma usada na criação
 + name | A mesma usada na solicitação
++ contacts | Contador de contatos
 + status | A mesma usada na criação
 
+
+### Adicionando contatos à lista
+
+```http
+PATCH /groups/ID HTTP/1.1
+Authorization: Bearer YourTokenComesHere
+Accept: application/json
+User-Agent: Http/2.2
+Host: HOST
+
+{
+    "contacts": [
+        1,
+        2
+    ]
+}
+```
+
+> A solicitação acima retorna a seguinte resposta:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "New edited list",
+  "contacts": "2",
+  "createAt": "2016-06-17T18:21:23+00:00",
+  "lastModifiedAt": "2016-06-17T18:21:23+00:00",
+  "status": "active",
+  "icon": "URL"
+}
+```
+
+ **PARÂMETROS DO PAYLOAD**
+
+Argumento | Obrigatório | Observações
+--------- | ----------- | -----------
+groups |  Sim | Array de id's de contatos
+
+#### Response
+
+Atributo | Descrição
+-------- | ---------
++ id | O mesmo usada na criação
++ createdAt  | A mesma usada na criação
++ modifiedAt  | A mesma usada na criação
++ name | A mesma usada na solicitação
++ contacts | Contador de contatos
++ status | A mesma usada na criação
 
 
 ### Listando todas as listas
@@ -174,6 +234,7 @@ Content-Type: application/json
         {
           "id": 1,
           "name": "New edited list",
+          "contacts": "2",
           "createAt": "2016-06-17T18:21:23+00:00",
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "status": "active"
@@ -182,6 +243,7 @@ Content-Type: application/json
         {
             "id": 2,
             "name": "New list",
+            "contacts": "0",
             "createAt": "2016-06-17T18:21:23+00:00",
             "lastModifiedAt": "2016-06-17T18:21:23+00:00",
             "status": "active"
@@ -209,7 +271,7 @@ Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
 ID_Account | Sim | O ID irá ser gerado de acordo com a Account que está logada
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -227,6 +289,7 @@ Content-Type: application/json
 {
   "id": 1,
   "name": "New edited list",
+  "contacts": "2",
   "createAt": "2016-06-17T18:21:23+00:00",
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "status": "active"
@@ -253,7 +316,7 @@ Argumento | Obrigatório | Observações
 ID_Account | Sim | O ID irá ser gerado de acordo com a Account que está logada
 ID_List | Sim | O ID que será buscado
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -261,12 +324,13 @@ Atributo | Descrição
 + createdAt  | A mesma usada na criação
 + modifiedAt  | A mesma usada na criação
 + name | A mesma usada na solicitação
++ contacts | Contador de contatos
 + status | A mesma usada na criação
 + icon | A mesma usada na criação
 
-### Excluindo a ação
+### Excluindo a lista
 
-Para se excluir uma ação é necessário um ID e que o status da ação é seja 'Criado'
+Para se excluir uma lista é necessário um ID
 
 ```http
 DELETE /groups/ID HTTP/1.1 200 OK

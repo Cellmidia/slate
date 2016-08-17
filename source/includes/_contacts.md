@@ -5,22 +5,21 @@ Visão Geral
 
 Recursos de contatos é a representação de uma contato que poderá ser importado pelo Cliente.
 
-
 ## Contato
 
-Para criar um contato deve-se ultilizar o seguinte endpoint:
+Para criar um contato deve-se utilizar o seguinte endpoint:
 
     `POST /contacts`
 
-Para editar um contato deve-se ultilizar o seguinte endpoint:
+Para editar um contato deve-se utilizar o seguinte endpoint:
 
     `PATCH /contacts/ID`
     
-Para listar todos os contatos deve-se ultilizar o seguinte endpoint:
+Para listar todos os contatos deve-se utilizar o seguinte endpoint:
 
     `GET /contacts`
  
-Para listar um contato deve-se ultilizar o seguinte endpoint:
+Para listar um contato deve-se utilizar o seguinte endpoint:
  
      `GET /contacts/ID`
 
@@ -56,6 +55,7 @@ Content-Type: application/json
   "status": "active"
 }
 ```
+
 > Se o contato estiver incorreto o retorno será o seguinte:
 
 ```http
@@ -98,7 +98,7 @@ name |  Sim | String entre 4-60 caracteres
 email | Sim | String entre 10-60 caracteres
 phone | Sim | Int entre 10-15 caracteres 
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -142,6 +142,7 @@ Content-Type: application/json
   "status": "active"
 }
 ```
+
 > Se o contato estiver incorreto o retorno será o seguinte:
 
 ```http
@@ -172,7 +173,7 @@ name |  Não | String entre 4-60 caracteres
 email | Não | String entre 10-60 caracteres
 phone | Não | Int entre 10-15 caracteres 
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -232,7 +233,7 @@ Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
 ID_Account | Sim | O ID irá ser gerado de acordo com a Account que está logada
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -274,7 +275,7 @@ Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
 ID | Sim | ID do contato que foi gerado
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------

@@ -5,18 +5,17 @@ Visão Geral
 
 Recursos de mensagem é a representação de uma mensagem que poderá ser enviada pelo Cliente.
 
-
 ## Mensagem
 
-Para se criar uma mensagem deve-se ultilizar o seguinte endpoint:
+Para se criar uma mensagem deve-se utilizar o seguinte endpoint:
 
     `POST /messages`
     
-Para se listar todas as mensagens deve-se ultilizar o seguinte endpoint:
+Para se listar todas as mensagens deve-se utilizar o seguinte endpoint:
 
     `GET /messages`
  
-Para se listar uma mensagem deve-se ultilizar o seguinte endpoint:
+Para se listar uma mensagem deve-se utilizar o seguinte endpoint:
 
     `GET /messages/ID`    
 
@@ -64,6 +63,7 @@ Content-Type: application/json
   "type": "SMS"
 }
 ```
+
 > Se a mensagem estiver incorreta o retorno será o seguinte:
 
 ```http
@@ -100,7 +100,7 @@ Atributo | Descrição
 + type | Representa o tipo de mensagem
 
 
- **PARÂMETROS DO PAYLOAD**
+**PARÂMETROS DO PAYLOAD**
 
 Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
@@ -109,7 +109,7 @@ from | Sim | Nome entre 3-15 caracteres
 to | Sim | Apenas numeros inteiros
 type | Sim | Tipo de mensagem
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -179,7 +179,7 @@ Argumento | Obrigatório | Observações
 --------- | ----------- | -----------
 ID_Owner | Sim | O ID irá ser gerado de acordo com a Account que está logada
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -217,6 +217,7 @@ Content-Type: application/json
     "code": 404
 }
 ```
+
 **PARÂMETROS DO PAYLOAD**
 
 Argumento | Obrigatório | Observações
@@ -224,7 +225,7 @@ Argumento | Obrigatório | Observações
 ID_Owner | Sim | O ID irá ser gerado de acordo com a Account que está logada
 ID | Sim | ID da Message 
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------

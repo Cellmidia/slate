@@ -5,26 +5,29 @@ Visão Geral
 
 Recursos de ação é a representação de uma ação que poderá ser enviada pelo Cliente.
 
-
 ## Ação
 
-Para criar uma ação deve-se ultilizar o seguinte endpoint:
+Para criar uma ação deve-se utilizar o seguinte endpoint:
 
     `POST /campaigns`
 
-Para editar uma ação deve-se ultilizar o seguinte endpoint:
+Para editar uma ação deve-se utilizar o seguinte endpoint:
 
     `PATCH /campaigns/ID`
     
-Para listar todas as ações deve-se ultilizar o seguinte endpoint:
+Para adicionar uma lista à uma ação deve-se utilizar o seguinte endpoint:
+    
+    `PATCH /campaigns/ID`
+        
+Para listar todas as ações deve-se utilizar o seguinte endpoint:
 
     `GET /campaigns`
  
-Para listar uma ação deve-se ultilizar o seguinte endpoint:
+Para listar uma ação deve-se utilizar o seguinte endpoint:
 
     `GET /campaigns/ID`
     
-Para deletar uma ação deve-se ultilizar o seguinte endpoint:
+Para deletar uma ação deve-se utilizar o seguinte endpoint:
 
     `DELETE /campaigns/ID`
     
@@ -80,11 +83,13 @@ Content-Type: application/json
   "title": "This is a title",
   "sender": "Something",
   "status": "created",
+  "groups": "0",
   "createAt": "2016-06-17T18:21:23+00:00",
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "schedule": "2016-07-12 13:00"
 }
 ```
+
 > Se a ação estiver incorreta o retorno será o seguinte:
 
 ```http
@@ -129,7 +134,7 @@ title | Sim | String entre 4-60 caracteres
 sender | Sim | String entre 4-10 caracteres
 schedule | Não | Data (Y-m-d H:m)
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -139,6 +144,7 @@ Atributo | Descrição
 + content | A mesma usada na solicitação
 + title | A mesma usada na solicitação
 + sender | A mesma usada na solicitação
++ groups | Contador de grupos
 + status | A mesma usada na solicitação
 + schedule | A mesma usada na solicitação
 
@@ -172,11 +178,13 @@ Content-Type: application/json
   "title": "This is a modified",
   "sender": "Modified",
   "status": "created",
+  "groups": "0",
   "createAt": "2016-06-17T18:21:23+00:00",
   "lastModifiedAt": "2016-06-17T18:21:23+00:00",
   "schedule": "2016-08-09T13:47:00+00:00"
 }
 ```
+
 > Se a ação estiver incorreta o retorno será o seguinte:
 
 ```http
@@ -209,7 +217,7 @@ title | Não | String entre 4-60 caracteres
 sender | Não | String entre 4-10 caracteres
 schedule | Não | DateTime no futuro Y-m-d H:M
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -219,10 +227,68 @@ Atributo | Descrição
 + content | A mesma usada na solicitação
 + title | A mesma usada na solicitação
 + sender | A mesma usada na solicitação
++ groups | Contador de grupos
 + status | A mesma gerada na criação
 + schedule | A data do agendamento
 
+### Adicionar lista à ação
 
+Para se adicionar uma lista à uma ação deve-se passar um array de ID's de listas
+
+```http
+PATCH /campaigns/ID HTTP/1.1
+Authorization: Bearer YourTokenComesHere
+Accept: application/json
+User-Agent: Http/2.2
+Host: HOST
+
+{
+    "groups" : [
+        1,
+        2,
+        3
+    ]
+}
+```
+
+> A solicitação acima retorna a seguinte resposta:
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "id": 1,
+  "content": "This is a modified",
+  "title": "This is a modified",
+  "sender": "Modified",
+  "status": "created",
+  "groups": "3",
+  "createAt": "2016-06-17T18:21:23+00:00",
+  "lastModifiedAt": "2016-06-17T18:21:23+00:00",
+  "schedule": "2016-08-09T13:47:00+00:00"
+}
+```
+
+ **PARÂMETROS DO PAYLOAD**
+
+Argumento | Obrigatório | Observações
+--------- | ----------- | -----------
+groups |  Sim | Array de id's de listas
+
+#### Response
+
+Atributo | Descrição
+-------- | ---------
++ id | A mesma gerada na criação
++ createdAt  | A mesma gerada na criação
++ modifiedAt  | A mesma gerada na criação
++ content | A mesma usada na criação
++ title | A mesma usada na criação
++ sender | A mesma usada na criação
++ groups | Contador de grupos
++ status | A mesma gerada na criação
++ schedule | A data do agendamento
 
 ### Listando todas as ações
 
@@ -240,6 +306,7 @@ Content-Type: application/json
           "title": "This is a title",
           "sender": "Something",
           "status": "created",
+          "groups": "3",
           "createAt": "2016-06-17T18:21:23+00:00",
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "schedule": "",
@@ -268,6 +335,7 @@ Content-Type: application/json
           "title": "This is a title",
           "sender": "Something",
           "status": "created",
+          "groups": "0",
           "createAt": "2016-06-17T18:21:23+00:00",
           "lastModifiedAt": "2016-06-17T18:21:23+00:00",
           "schedule": "2016-08-09T13:47:00+00:00",
@@ -328,12 +396,12 @@ Authorization: Bearer YourTokenComesHere
 Content-Type: application/json
 
 {
-{
     "id": 1,
     "content": "This is a content",
     "title": "This is a title",
     "sender": "Something",
     "status": "created",
+    "groups": "3",
     "createAt": "2016-06-17T18:21:23+00:00",
     "lastModifiedAt": "2016-06-17T18:21:23+00:00",
     "schedule": "",
@@ -377,7 +445,7 @@ Argumento | Obrigatório | Observações
 ID_Account | Sim | O ID irá ser gerado de acordo com a Account que está logada
 ID_Campaign | Sim | O ID que será buscada
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -387,12 +455,14 @@ Atributo | Descrição
 + content | A mesma usada na criação
 + title | A mesma usada na criação
 + sender | A mesma usada na criação
++ groups | Contador de grupos
 + status | A mesma gerada na criação
 + schedule | A mesma gerada na criação
 
 ### Excluindo a ação
 
 Para se excluir uma ação é necessário um ID e que o status da ação seja entre 'Criado', 'Teste', 'Cancelado' ou "Agendado"
+
 ```http
 DELETE /capaigns/ID HTTP/1.1
 Authorization: Bearer YourTokenComesHere
@@ -401,7 +471,6 @@ User-Agent: Http/2.2
 Host: HOST
 
 {
-
 }
 ```
 
@@ -426,6 +495,7 @@ ID | Sim | Unique e int
 ### Disparando Testes para a Ação
 
 Para enviar os testes da campanha
+
 ```http
 POST /campaigns/23/message HTTP/1.1
 Accept: application/json
@@ -497,7 +567,7 @@ Origin: http://localhost:9005
 }
 ```
 
-* Response
+#### Response
 
 Atributo | Descrição
 -------- | ---------
@@ -510,5 +580,3 @@ Atributo | Descrição
 + status.date | Date Data de envio da resposta
 + campaign.status | String Status atual da Ação (APPROVED, REJECT)
 + campaign.date | Date Data da alteração
-
-
