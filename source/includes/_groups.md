@@ -7,7 +7,7 @@ Recursos de listas é a representação de um grupo de contatos que poderá ser 
 
 ## Lista
 
-Para criar uma lista deve-se ultilizar o seguinte endpoint:
+Para criar uma lista deve-se utilizar o seguinte endpoint:
 
     `POST /groups`
 
